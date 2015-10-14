@@ -18,9 +18,13 @@ EXAMPLES:
 
 0 download install
 
+1 install
+
 3 uninstall
 
 3 uninstall remove
+
+2 remove
 
 TO DO LIST:
 
