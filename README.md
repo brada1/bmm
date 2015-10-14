@@ -1,21 +1,25 @@
-Besiege Mod Manager
+BESIEGE MOD MANAGER
 
 Still in early development - version 0.1. It's no use if you are not a developer/modder. 
 
-Installation:
+INSTALLATION:
 Extract these [python files](source/source.rar) into your Besiege dir (where Besiege.exe is).
 
-Usage:
+USAGE:
 Run bmm0.1.py using your favourite python interpreter. 
 You'll see a database of mods and associated ID's
 Do operations by typing these commands in shell/bash:
+
 ID COMMAND (COMMAND)
 
-Examples:
+EXAMPLES:
 
 0 download
+
 0 download install
+
 3 uninstall
+
 3 uninstall remove
 
 TO DO LIST:
@@ -45,5 +49,3 @@ TO DO LIST:
 - make the installation of spaar's mod loade nd tygd's block loader obligatory
 
 - expand the special uninstallation of spaar's mod loader to whipe the Mods dir and to untag all downloaded mods
-
-- 
