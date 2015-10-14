@@ -61,36 +61,6 @@ while instr != 'exit':
 
 
     
-# select a db query based on an input and parse the data for the downloader
-inp = 2
-##parsed = Parser.parse(onlinedb[inp])
-##Downloader.dl(parsed[0], parsed[1])
 
-
-# call the installer
-##Installer.install(parsed[2], parsed[3])
-
-
-
-# need to optimize overall class structure
-
-# need to make the role of the parser more clear
-
-# include exceptions handling for the downloading, removing, installing and unninstalling processes!
-
-# need to optimize database comparison algorithm
-
-# the manager needs to have an online and offline state
-# in online state it can download and install/uninstall mods
-# in offline state it can only install/uninstall mods
-
-# needs a GUI
-
-# needs a standalone .exe build
-
-# could inclide the option for updating newer mod versions
-# need to optimize database first
-
-# could include .lvl management
     
 
