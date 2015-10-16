@@ -1,5 +1,6 @@
 import urllib.request
 import os, shutil
+from bmm_parser import Parser
 
 class Downloader():
 
@@ -9,23 +10,24 @@ class Downloader():
             print (d + " doesn't exist. Creating it...")
             os.makedirs(d)
 
-    def dl(url, dld):
-        # this is a simple downloader function
-        Downloader.dirExistCheck(dld)
-
-        # create the full target directory + filename path
-        file_name =  dld + '\\' + url.split('/')[-1]
+    def dl(dbq):
+        pointer = Parser.parse_dl(dbq)
+        dlurl = pointer[0]
+        dldir = pointer[1]
+        dlpath = pointer [2]
+        m = pointer [3]
+        Downloader.dirExistCheck(dldir)
         
-        # download
-        print ("downloading " + url + " to " + dld + '...')
-        with urllib.request.urlopen(url) as response, open(file_name, 'wb') as out_file:
-            shutil.copyfileobj(response, out_file)
+        print (m)
+        with urllib.request.urlopen(dlurl) as resp, open(dlpath, 'wb') as file:
+            shutil.copyfileobj(resp, file)
         print ('done')
 
-    def rm(url, dld):
-        # delete a given file path
-        path = dld + '\\' + url.split('/')[-1]
-        print ('removing ' + path + '...')
-        os.remove(path)
+    def rm(dbq):
+        pointer = Parser.parse_rm(dbq)
+        dlpath = pointer[0]
+        m = pointer[1]
+        print (m)
+        os.remove(dlpath)
         print ('done')
         

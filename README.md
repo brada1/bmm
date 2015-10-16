@@ -1,42 +1,52 @@
 BESIEGE MOD MANAGER
 
-Still in early development - version 0.1. It's no use if you are not a developer/modder. 
+Still in early development - version 0.2. Use for testing only.
+
 
 INSTALLATION:
-Extract these [python files](source/source.rar) into your Besiege dir (where Besiege.exe is).
+Extract these [python files](source/bmm_0.2_source.rar) into your Besiege dir (where Besiege.exe is).
 
 USAGE:
-Run bmm0.1.py using your favourite python interpreter. 
-You'll see a database of mods and associated ID's
-Do operations by typing these commands in shell/bash:
+Run bmm0.2.py using your favourite python interpreter. 
+Follow the instructions provided.
 
-ID COMMAND (COMMAND)
 
-EXAMPLES:
+TECHNICAL INFO:
 
-0 download
+[Besiege Mod Manager Class Structure](bmm_class_structure.jpg)
 
-0 download install
+- Main():
+	- asks the user for operations on downloading/removing and installing/uninstalling mods
+	- calls the Database() class to show a list of mods
+	- calls the Installer(), Downloader() if the user wishes to
+- Database():
+	- scans the downloads dir and creates a local database
+		- this contains info about which mods are downloaded, their version and if they are installed or not
+	- connects to the online database to get a list of all the availabe mods for download
+		- also checks the newest version and where it should be downloaded locally
+	- calls the Parser() and the Const() classes to get the required paths and urls
+- Downloader():
+	- downloads or removes the the downloaded zip of a mod
+	- calls the Parser() class to get the necessary paths and urls 
+- Installer():
+	- installs or deinstalls a given mod
+	- has a special case for Spaar's Mod Loader
+	- calls the Parser() and the Const() classes to get the required paths and urls
+- Parser():
+	- does the heavy lifting of parsing paths and urls
+- Const():
+	- contains some constants and variables 
 
-1 install
-
-3 uninstall
-
-3 uninstall remove
-
-2 remove
 
 TO DO LIST:
-
-- optimize overall class structure
-
-- make the role of the parser more clear
 
 - include exceptions handling for the downloading, removing, installing and unninstalling processes!
 
 - optimize database comparison algorithm
 
 - fill in database
+
+- add more special installation cases for mods such as the Water Mod
 
 - the manager needs to have an online and offline state
 	- in online state it can download and install/uninstall mods
@@ -49,7 +59,3 @@ TO DO LIST:
 - inclide the option for updating to newer mod versions
 
 - include custom .lvl management
-
-- make the installation of spaar's mod loade nd tygd's block loader obligatory
-
-- expand the special uninstallation of spaar's mod loader to whipe the Mods dir and to untag all downloaded mods

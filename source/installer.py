@@ -2,43 +2,60 @@ import os, zipfile, shutil
 from bmm_parser import Parser
 
 class Installer():
-    def install(source_filename, install_dir):
+    def install(dbq):
+
+        pointer = Parser.parse_instl(dbq)
+        dlpath = pointer[0]
+        instldir = pointer[1]
+        tag_dlpath = pointer[2]
+        m = pointer[3]
+        
         # installs a given mod (only in zip format for now)
-        zf = zipfile.ZipFile(source_filename)
-        print ('installing ' + source_filename + ' to ' + install_dir + '...')
-        zf.extractall(install_dir)
+        zf = zipfile.ZipFile(dlpath)
+        print (m)
+        zf.extractall(instldir)
         zf.close()
 
         # include special case for spaars module
-        # make backup of Assembly-UnityScript.dll and then copy the dll from zip
-        if 'spaar' in source_filename:
-            print ('backing up Assembly-UnityScript.dll...')
+        # make backup of Assembly-UnityScript.dll
+        # then copy the dll from zip
+        if 'spaar' in dlpath:
+            pointer2 = Parser.parse_instl_spaar()
+            us = pointer2[0]
+            us_bkp = pointer2[1]
+            us_instlpath = pointer2[2]
+            m1 = pointer2[3]
+            m2 = pointer2[4]
+            print ('\n')
+            for i in range(len(pointer2)):
+                print (pointer2[i])
+
             # make backup of Assembly-UnityScript.dll
-            us = Parser.get('unity_script')
-            os.rename(us, '-bkp'.join([us[:-4],us[-4:]]))
-            print ('copying the modded dll...')
-            shutil.copyfile(install_dir + '\\Assembly-UnityScript.dll', us)   
-            
+            print (m1)
+            os.rename(us, us_bkp)
+            print (m2)
+            shutil.copyfile(us_instlpath, us)   
+         
+
         # tag the downloaded file as installed
-        tmparr = source_filename.split('\\')
-        tmparr[-1] = 'installed_' + tmparr[-1]
-        tagged_source = '\\'.join(tmparr)
-        os.rename(source_filename, tagged_source)
+        os.rename(dlpath, tag_dlpath)
         print ('done')
         
-    def uninstall(source_filename, dest_dir):
+    def uninstall(dbq):
         # uninstalls a given mod (if it was installed from a zip file only)
         # doesn't remove files generated at runtime
         # doesn't remove directories and subdirs
+        pointer = Parser.parse_uninstl(dbq)
+        dlpath = pointer[0]
+        instldir = pointer[1]
+        untag_dlpath = pointer[2]
+
         print ('uninstalling...')
-        tmparr = source_filename.split('\\')
-        tmparr[-1] = 'installed_' + tmparr[-1]
-        tagged_source = '\\'.join(tmparr)
-        with zipfile.ZipFile(tagged_source) as zf:
+        with zipfile.ZipFile(dlpath) as zf:
             # look in the downloaded zip to determine the folder structure
             for member in zf.infolist():
                 words = member.filename.split('/')
-                path = dest_dir
+                path = instldir
                 for word in words[:-1]:
                     drive, word = os.path.splitdrive(word)
                     head, word = os.path.split(word)
@@ -47,26 +64,31 @@ class Installer():
                 path = path + '\\' + words[-1]
                 if os.path.isfile(path):
                     # if we have a path to a valid file, delete it
-                    print ('deleting ' + path)
+                    print ('deleting ' + path + '...')
                     os.remove(path)
 
         # include special case for spaars mod loader
         # delete the modded Assembly-UnityScript.dll from the Managed dir
-        # restore the created backup
-        if 'spaar' in source_filename:
-            us = Parser.get('unity_script')
-            print ('removing modded Assembly-UnityScript.dll...')
+        # restore the backup created during installation
+        if 'spaar' in dlpath:
+            pointer2 = Parser.parse_uninstl_spaar(dbq)
+            us = pointer2[0]
+            us_bkp = pointer2[1]
+            json = pointer2[2]
+            m1 = pointer2[3]
+            m2 = pointer2[4]
+            m3 = pointer[5]
+
+            print (m1)
             os.remove(us)
-            print ('restoring backup of Assembly-UnityScript.dll...')
-            usbkp = '-bkp'.join([us[:-4],us[-4:]])
-            os.rename(usbkp, us)
-        # need to remove the whole Mods dir
-        # then untag all the zip files 
-            
+            print (m2)
+            os.rename(us_bkp, us)
+            print (m3)
+            os.remove(json)
                     
         # untag the downloaded file
-        os.rename(tagged_source, source_filename)
+        os.rename(dlpath, untag_dlpath)
         print ('done')
 
-# to add special cases for mods such as spaars mod loader
+
 # add installation of .dll files which are not in an archive
