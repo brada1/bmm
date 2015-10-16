@@ -4,7 +4,7 @@ Still in early development - version 0.2. Use for testing only.
 
 
 INSTALLATION:
-Extract these [python files](source/bmm_source-v0.2.rar) into your Besiege dir (where Besiege.exe is).
+Extract these [python files](https://github.com/brada1/bmm/raw/master/source/bmm_source-v0.2.rar) into your Besiege dir (where Besiege.exe is).
 
 USAGE:
 Run bmm0.2.py using your favourite python interpreter. 
