@@ -13,7 +13,7 @@ Follow the instructions provided.
 
 TECHNICAL INFO:
 
-[Besiege Mod Manager Class Structure](bmm_class_structure.jpg)
+[Besiege Mod Manager Class Structure](https://raw.githubusercontent.com/brada1/bmm/master/bmm_class_structure.jpg)
 
 - Main():
 	- asks the user for operations on downloading/removing and installing/uninstalling mods
