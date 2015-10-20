@@ -1,4 +1,11 @@
 essential spaarsModLoader 1.0.0beta9
 essential BlockLoader beta21
 block BigSlickWheelPack 1
+block Cockpits 1
+block Cog 1
+block DrumBlock beta21
+block LaserMod 1
 block MoreBlocksMod 0.4
+block PhantomAerospace 0.11
+block WheelModBounce 1
+environment TheSkyandGround 1

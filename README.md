@@ -4,11 +4,33 @@ Still in early development - version 0.2. Use for testing only.
 
 
 INSTALLATION:
-Extract these [python files](https://github.com/brada1/bmm/raw/master/source/bmm_source-v0.2.rar) into your Besiege dir (where Besiege.exe is).
+Make a backupf of your mods directory and delete the original (the loader can't figure out what is pre-installed there yet). 
+Download [bmm0.2.exe](https://github.com/brada1/bmm/raw/master/source/dist/bmm0.2.exe) into your Besiege dir (where Besiege.exe is).
 
 USAGE:
-Run bmm0.2.py using your favourite python interpreter. 
-Follow the instructions provided.
+Run bmm0.2.exe through CMD and follow the instructions.
+
+TO DO LIST:
+
+- work closely with the modLoader.json file to allow enabling/disabling a mod instead of installing/uninstalling
+
+- optimize database comparison algorithm
+
+- fill in database
+
+- add more special installation cases for mods such as the Water Mod
+
+- the manager needs to have an online and offline state
+	- in online state it can download and install/uninstall mods
+	- in offline state it can only install/uninstall mods
+
+- make a GUI
+
+- build a standalone .exe
+
+- inclide the option for updating to newer mod versions
+
+- include custom .lvl management
 
 
 TECHNICAL INFO:
@@ -38,24 +60,3 @@ TECHNICAL INFO:
 	- contains some constants and variables 
 
 
-TO DO LIST:
-
-- include exceptions handling for the downloading, removing, installing and unninstalling processes!
-
-- optimize database comparison algorithm
-
-- fill in database
-
-- add more special installation cases for mods such as the Water Mod
-
-- the manager needs to have an online and offline state
-	- in online state it can download and install/uninstall mods
-	- in offline state it can only install/uninstall mods
-
-- make a GUI
-
-- build a standalone .exe
-
-- inclide the option for updating to newer mod versions
-
-- include custom .lvl management

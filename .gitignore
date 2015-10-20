@@ -41,3 +41,14 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# =========================
+# python cache
+# Byte-compiled / optimized / DLL files
+# =========================
+.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+.cdr
