@@ -52,7 +52,7 @@ class Parser():
     def parse_uninstl_spaar(dbq):
         us = Const.unity_script()
         us_bkp = '-bkp'.join([us[:-4],us[-4:]])
-        json = Const.dldir + 'Mods\\Config\\modLoader.json'
+        json = Const.cd + 'Mods\\Config\\modLoader.json'
         m1 = 'removing modded Assembly-UnityScript.dll...'
         m2 = 'restoring backup of Assembly-UnityScript.dll...'
         m3 = 'romoving ' + json + '...'

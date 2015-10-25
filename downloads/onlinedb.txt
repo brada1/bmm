@@ -1,5 +1,8 @@
 essential spaarsModLoader 1.0.0beta9
 essential BlockLoader beta21
+gameplay FirstPersonBlock 1
+gameplay WaterMod 2
+build Rotate 1
 block BigSlickWheelPack 1
 block Cockpits 1
 block Cog 1
