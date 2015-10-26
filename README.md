@@ -2,6 +2,7 @@ BESIEGE MOD MANAGER v0.3(Besiege v0.20)
 
 Still in development - use for testing only!
 
+![Screenshot](https://github.com/brada1/bmm/raw/master/screenshot.jpg)
 
 INSTALLATION:
 
