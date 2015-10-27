@@ -1,22 +1,22 @@
-BESIEGE MOD MANAGER v0.3(Besiege v0.20)
+##BESIEGE MOD MANAGER v0.3 (Besiege v0.20)
 
 Still in development - use for testing only!
 
 ![Screenshot](https://github.com/brada1/bmm/raw/master/screenshot.jpg)
 
-INSTALLATION:
+###INSTALLATION:
 
 - Uninstall Spaar's mod loader (you can leave it installed, but then do not install through the manager)
 - Make a backup of your mods directory and delete the original (the loader can't figure out what is pre-installed there yet) 
 - Download [bmm0.3.exe](https://github.com/brada1/bmm/raw/master/source/dist/bmm0.3.exe) into your Besiege dir (where Besiege.exe is)
 
 
-USAGE:
+###USAGE:
 
 Run bmm0.3.exe and have fun.
 
 
-CHANGELOG (v0.3):
+###CHANGELOG (v0.3):
 
 - introduced GUI
 
@@ -27,7 +27,7 @@ CHANGELOG (v0.3):
 - now there is an offline and an online mode of the manager (automatic)
 
 
-TO DO LIST:
+###TO DO LIST:
 
 - clean up the BMMgui class
 	- do et man
@@ -44,8 +44,10 @@ TO DO LIST:
 
 - work closely with the modLoader.json file to allow enabling/disabling a mod instead of installing/uninstalling
 
+- clear out spaar's Mod Loader installer integration
 
-TECHNICAL INFO:
+
+###TECHNICAL INFO:
 
 ![Besiege Mod Manager Class Structure](https://github.com/brada1/bmm/raw/master/source/v0.3/bmm_class_structure.jpg)
 
@@ -77,7 +79,7 @@ TECHNICAL INFO:
 - Const():
 	- contains some constants and variables 
 
-BUILD TOOLS:
+###BUILD TOOLS:
 - Python v3.4.3
 - wxPython Phoenix v3.0.3.dev1830+0b5f910 (unofficial release)
 - py2exe v 0.9.2.2
