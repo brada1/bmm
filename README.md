@@ -8,7 +8,7 @@ INSTALLATION:
 
 - Uninstall Spaar's mod loader (you can leave it installed, but then do not install through the manager)
 - Make a backup of your mods directory and delete the original (the loader can't figure out what is pre-installed there yet) 
-- Download [bmm0.3.exe](https://github.com/brada1/bmm/raw/master/source/builds/bmm0.3.exe) into your Besiege dir (where Besiege.exe is)
+- Download [bmm0.3.exe](https://github.com/brada1/bmm/raw/master/source/dist/bmm0.3.exe) into your Besiege dir (where Besiege.exe is)
 
 
 USAGE:

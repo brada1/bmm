@@ -1,3 +1,4 @@
 essential spaarsModLoader 3ones
 essential BlockLoader beta3
+build CustomRotation 1
 block DrumBlock beta3
