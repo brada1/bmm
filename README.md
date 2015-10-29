@@ -29,6 +29,8 @@ Run bmm0.3.exe and have fun.
 
 ###TO DO LIST:
 
+- repair the backing up of the unity-script dll
+
 - clean up the BMMgui class
 	- do et man
 

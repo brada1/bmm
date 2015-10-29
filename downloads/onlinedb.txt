@@ -7,6 +7,7 @@
 2block BigSlickWheelPack 1
 2block Cockpits 1
 2block DrumBlock beta3
+2block ExplodingCannonballs 0.5
 3gameplay AntiGravityMod 1
 3gameplay WaterMod 2
 4utility StateViewerMod NEW
